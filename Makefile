@@ -14,21 +14,24 @@ AR = ar
 
 ARFLAGS = -rcs
 
+LDFLAGS = -L. -lasm
+
 ASRC = ft_strlen.s \
+       ft_strcpy.s
 
 CSRC = main.c
 
 AOBJ = $(ASRC:.s=.o)
 
-COBJ = $(CSRC:.s=.o)
+COBJ = $(CSRC:.c=.o)
 
 all: $(NAME) $(TEST)
 
 $(NAME): $(AOBJ)
 	$(AR) $(ARFLAGS) $(NAME) $(AOBJ)
 
-$(TEST): $(AOBJ) $(COBJ)
-	$(CC) $(CFLAGS) $(AOBJ) $(COBJ) -o $(TEST)
+$(TEST): $(NAME) $(COBJ)
+	$(CC) $(CFLAGS) $(COBJ) $(LDFLAGS) -o $(TEST)
 
 clean:
 	rm -f $(AOBJ) $(COBJ)
