@@ -10,14 +10,13 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-AR = ar
-
 ARFLAGS = -rcs
 
 LDFLAGS = -L. -lasm
 
 ASRC = ft_strlen.s \
-       ft_strcpy.s
+       ft_strcpy.s \
+       ft_strcmp.s
 
 CSRC = main.c
 
@@ -34,11 +33,11 @@ $(TEST): $(NAME) $(COBJ)
 	$(CC) $(CFLAGS) $(COBJ) $(LDFLAGS) -o $(TEST)
 
 clean:
-	rm -f $(AOBJ) $(COBJ)
-	rm -f $(TEST)
+	$(RM) $(AOBJ) $(COBJ)
+	$(RM) $(TEST)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 

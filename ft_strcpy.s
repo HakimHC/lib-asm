@@ -14,7 +14,5 @@ _loop:
 	inc rdi
 	cmp bl, 0
 	jne _loop
-;	mov bl, 0
-;	mov [rdi], bl
 	mov rax, 0
 	ret
