@@ -10,9 +10,11 @@ int	main(void)
 	printf("string: '' | expected: %lu | got: %lu\n", strlen(""), ft_strlen(""));
 	printf("========================================\n\n");
 	printf("============ FT_STRCPY =================\n");
-	char src[] = "hello";
-	char dest[50] = "";
-	printf("%s\n", ft_strcpy(dest, src));
-	/* dest[5] = 0; */
-	/* printf("%s\n", dest); */
+	char src[] = "hello sir";
+	char dest[40] = "";
+	char o_dest[40] = "";
+	printf("src: '%s' | dest: '%s' | ", src, dest);
+	printf("expected: %s\n", strcpy(o_dest, src));
+	printf("res: %s\n", ft_strcpy(dest, src));
+	printf("========================================\n\n");
 }
