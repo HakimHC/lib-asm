@@ -1,5 +1,7 @@
+#include <errno.h>
 #include <string.h>
 #include <stdio.h>
+#include <unistd.h>
 
 #include "libasm.h"
 
@@ -10,12 +12,18 @@ int	main(void)
 	printf("string: '' | expected: %lu | got: %lu\n", strlen(""), ft_strlen(""));
 	printf("========================================\n\n");
 	printf("============ FT_STRCPY =================\n");
-	char src[] = "hello sir";
+	char *src = "hello sir";
 	char dest[40] = "";
 	char o_dest[40] = "";
+	char dest2[] = "yello world";
+	char o_dest2[] = "yello world";
 	printf("src: '%s' | dest: '%s' | ", src, dest);
 	printf("expected: %s\n", strcpy(o_dest, src));
 	printf("res: %s\n", ft_strcpy(dest, src));
+	src = "h";
+	printf("src: '%s' | dest: '%s' | ", src, dest2);
+	printf("expected: %s\n", strcpy(o_dest2, src));
+	printf("res: %s\n", ft_strcpy(dest2, src));
 	printf("========================================\n\n");
 	printf("============ FT_STRCMP =================\n");
 	char *s1 = "hola";
@@ -27,4 +35,10 @@ int	main(void)
 	s1 = "yooh";
 	s2 = s1;
 	printf("s1: '%s' | s2: '%s' | expected: %d | got: %d\n", s1, s2, strcmp(s1, s2), ft_strcmp(s1, s2));
+	printf("========================================\n\n");
+	printf("============ FT_WRITE ==================\n");
+	printf("%li\n", ft_write(3232, "keloke manin\n", ft_strlen("keloke manin\n")));
+	printf("%d\n", errno);
+	printf("%li\n", write(3232, "keloke manin\n", ft_strlen("keloke manin\n")));
+	printf("%d\n", errno);
 }

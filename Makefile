@@ -8,7 +8,7 @@ ASFLAGS = -f elf64 -F dwarf -g
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -no-pie
 
 ARFLAGS = -rcs
 
@@ -16,7 +16,8 @@ LDFLAGS = -L. -lasm
 
 ASRC = ft_strlen.s \
        ft_strcpy.s \
-       ft_strcmp.s
+       ft_strcmp.s \
+       ft_write.s
 
 CSRC = main.c
 
