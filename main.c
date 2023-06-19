@@ -6,6 +6,16 @@
 
 #include "libasm.h"
 
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*node = malloc(sizeof(t_list));
+	if (!node)
+		return NULL;
+	node->data = content;
+	node->next = NULL;
+	return node;
+}
+
 int	main(void)
 {
 	printf("============ FT_STRLEN =================\n");
@@ -48,4 +58,16 @@ int	main(void)
 	ptr = ft_strdup("");
 	printf("%s\n", ptr);
 	free(ptr);
+	t_list *head = ft_lstnew("1");
+	char *p = ((char *)head + 8);
+	void **pp = (void**)((char *)head + 8);
+	printf("%p\n", &((t_list *)NULL)->next);
+	printf("%p\n", *pp);
+	printf("%p\n", p);
+	t_list *n1 = ft_lstnew("2");
+	t_list *n2 = ft_lstnew("3");
+	head->next = n1;
+	n1->next = n2;
+
+	printf("%d\n", ft_list_size(head));
 }
