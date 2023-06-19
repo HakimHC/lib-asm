@@ -12,9 +12,9 @@ _loop:
 	add rdi, 8
 	mov rax, [rdi]
 	inc rcx
-	; add rax, 8
 	cmp rax, 0
 	jne _aux
+	mov rax, rcx
 	ret
 
 _aux:

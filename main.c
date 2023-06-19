@@ -65,9 +65,9 @@ int	main(void)
 	printf("%p\n", *pp);
 	printf("%p\n", p);
 	t_list *n1 = ft_lstnew("2");
-	t_list *n2 = ft_lstnew("3");
+	/* t_list *n2 = ft_lstnew("3"); */
 	head->next = n1;
-	n1->next = n2;
+	/* n1->next = n2; */
 
-	printf("%d\n", ft_list_size(head));
+	printf("%d\n", ft_list_size(NULL));
 }
