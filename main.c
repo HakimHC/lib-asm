@@ -1,4 +1,5 @@
 #include <errno.h>
+#include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -41,6 +42,10 @@ int	main(void)
 	printf("%d\n", errno);
 	printf("%li\n", write(3232, "keloke manin\n", ft_strlen("keloke manin\n")));
 	printf("%d\n", errno);
-	char buf[30];
-	/* ft_read(0, buf, 5); */
+	char *ptr = ft_strdup("hola");
+	printf("%s\n", ptr);
+	free(ptr);
+	ptr = ft_strdup("");
+	printf("%s\n", ptr);
+	free(ptr);
 }
