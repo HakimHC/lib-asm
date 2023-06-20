@@ -16,6 +16,16 @@ t_list	*ft_lstnew(void *content)
 	return node;
 }
 
+void	print_list(t_list *head)
+{
+	static int i;
+	if (!head)
+		return;
+	printf("Node %d: %s\n", i, (char*)head->data);
+	++i;
+	print_list(head->next);
+}
+
 int	main(void)
 {
 	printf("============ FT_STRLEN =================\n");
@@ -65,9 +75,12 @@ int	main(void)
 	printf("%p\n", *pp);
 	printf("%p\n", p);
 	t_list *n1 = ft_lstnew("2");
-	/* t_list *n2 = ft_lstnew("3"); */
-	head->next = n1;
-	/* n1->next = n2; */
+	t_list *n2 = ft_lstnew("3");
 
 	printf("%d\n", ft_list_size(NULL));
+	t_list *n = NULL;
+	ft_list_push_front(&n, head);
+	ft_list_push_front(&n, n1);
+	ft_list_push_front(&n, n2);
+	print_list(n);
 }
