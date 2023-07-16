@@ -5,7 +5,6 @@
 * ft_strlen (man 3 strlen): Returns the size of a string.
 * ft_strcpy (man 3 strcpy): Copies the content of a string ```src``` into a string ```dest```.
 * ft_strcmp (man 3 strcmp): Compares two strings.
-* ft_strcmp (man 3 strcmp): Compares two strings.
 * ft_strdup (man 3 strdup): Returns a duplicate of a string, using dynamic allocation.
 
 #### System calls
